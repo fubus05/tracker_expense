@@ -3,13 +3,16 @@ import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { FinancialProvider } from './FinancialContext';
 import MyTabs from './navigation/MyTabs'
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const App = () => {
   return (
     <FinancialProvider>
       <NavigationContainer>
-        <MyTabs />
-        <StatusBar style="auto" />
+        <GestureHandlerRootView style={{ flex: 1 }}>
+          <MyTabs />
+          <StatusBar style="auto" />
+        </GestureHandlerRootView>
       </NavigationContainer>
     </FinancialProvider>
   );
